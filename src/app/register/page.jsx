@@ -125,7 +125,7 @@ export default function RegistrationPage() {
           {showSuccess && (
             <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
               <p className="text-green-800 font-medium">
-Registration received! Our team will contact you shortly to complete the process.
+              Registration received! Our team will contact you shortly to complete the process.
               </p>
             </div>
           )}
