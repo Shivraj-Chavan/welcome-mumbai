@@ -54,7 +54,7 @@ export default function MajhiMumbaiLanding() {
                   </span>
                 </h2>
                 <p className="text-xl lg:text-2xl text-blue-100 font-light">
-                  From local teas to luxury experiences — we connect you to authentic Mumbai
+                  From local tea's to luxury experiences — we connect you to authentic Mumbai
                 </p>
                 <p className="text-lg text-blue-200">
                   Professional services, local expertise, trusted guidance for every need

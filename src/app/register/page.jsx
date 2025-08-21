@@ -255,32 +255,7 @@ import { useRouter } from "next/navigation";
 // import CheckBoxes from "../components/registerform/checkboxes";
 // import InputFields from "../components/registerform/InputFields";
 
-export default function RegistrationForm() {
-  const [companyType, setCompanyType] = useState([]);
-  const [showSuccess, setShowSuccess] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const router = useRouter();
-  const [formData, setFormData] = useState({
-    personName: "",
-    companyName: "",
-    address: "",
-    pinCode: "",
-    location: "",
-    gst: "",
-    telephone: "",
-    fax: "",
-    mobile: "",
-    whatsapp: "",
-    email: "",
-    website: "",
-    nature: "",
-    category: "",
-    subCategory: "",
-    workingDays: "",
-    closedDays: "",
-  });
-
-  // CheckBoxes
+// CheckBoxes
   const CheckBoxes = ({ label, options, selected, onChange }) => (
     <div className="mb-4">
       <label className="block font-medium mb-1">{label}</label>
@@ -339,15 +314,60 @@ export default function RegistrationForm() {
   );
 
 
+export default function RegistrationForm() {
+  const [companyType, setCompanyType] = useState([]);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    personName: "",
+    companyName: "",
+    address: "",
+    pinCode: "",
+    location: "",
+    gst: "",
+    telephone: "",
+    fax: "",
+    mobile: "",
+    whatsapp: "",
+    email: "",
+    website: "",
+    nature: "",
+    category: "",
+    subCategory: "",
+    workingDays: "",
+    closedDays: "",
+  });
+
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    const phoneFields = ["mobile", "whatsapp", "telephone"];
-    if (phoneFields.includes(name)) {
-      const onlyNumbers = value.replace(/\D/g, "");
-      if (onlyNumbers.length > 10) return;
+  const { name, value } = e.target;
+
+  // Define digit-only fields
+  const phoneFields = ["mobile", "whatsapp", "telephone"];
+  const pinField = "pinCode";
+
+  if (phoneFields.includes(name)) {
+    // Allow only digits, max 10
+    const onlyNumbers = value.replace(/\D/g, "");
+    if (onlyNumbers.length <= 10) {
+      setFormData((prev) => ({ ...prev, [name]: onlyNumbers }));
     }
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+    return;
+  }
+
+  if (name === pinField) {
+    // Allow only digits, max 6
+    const onlyNumbers = value.replace(/\D/g, "");
+    if (onlyNumbers.length <= 6) {
+      setFormData((prev) => ({ ...prev, [name]: onlyNumbers }));
+    }
+    return;
+  }
+
+  // Default case: allow normal text
+  setFormData((prev) => ({ ...prev, [name]: value }));
+};
+
 
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
@@ -464,7 +484,7 @@ export default function RegistrationForm() {
         <InputFields
           label="Pin Code"
           name="pinCode"
-          type="number"
+          type="text"
           value={formData.pinCode}
           onChange={handleInputChange}
         />
@@ -499,6 +519,7 @@ export default function RegistrationForm() {
         <InputFields
           label="Mobile No."
           name="mobile"
+           type="text"
           value={formData.mobile}
           onChange={handleInputChange}
         />

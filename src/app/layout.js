@@ -84,13 +84,22 @@ export default function RootLayout({ children }) {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-lg flex items-center justify-center text-white font-bold">
-                  MM
-                </div>
-                <div>
+                
+                  {/* MM */}
+                  <div className="w-20 h-12 sm:w-34 sm:h-16 rounded flex items-center justify-center overflow-hidden">
+                    <Image
+                      src="/logo/MAZHIMUMBAI.jpg"
+                      alt="Mazhi Mumbai Logo"
+                      width={128}   
+                      height={64}   
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+              
+                {/* <div>
                   <h3 className="text-xl font-bold">Mazhi Mumbai</h3>
                   <p className="text-gray-400 italic">Tapri Se Taj Tak</p>
-                </div>
+                </div> */}
               </div>
               <p className="text-gray-400 mb-4">
                 Your trusted local guide connecting you to authentic Mumbai experiences, 
@@ -120,7 +129,7 @@ export default function RootLayout({ children }) {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Majhi Mumbai. All rights reserved.</p>
+            <p>&copy; 2025 Mazhi Mumbai. All rights reserved.</p>
           </div>
         </div>
       </footer>
