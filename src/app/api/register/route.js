@@ -44,7 +44,7 @@ export async function POST(request) {
 
     const mailOptions = {
       from: 'mazhimumbaiinfo@gmail.com',
-      to: 'amalik2820@gmail.com',
+      to: 'mazhimumbaidata@gmail.com',
       subject: 'New Registration For Mumbai',
       text: content,
     };
