@@ -314,7 +314,7 @@ const router = useRouter();
       throw new Error("Failed to submit registration");
     }
     alert("Registration submitted successfully!");
-    
+
     setShowSuccess(true);
     // Reset form fields after success
     setFormData({
