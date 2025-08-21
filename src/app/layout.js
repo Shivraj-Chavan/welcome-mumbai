@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { MapPin, Users, Star, ArrowRight, Phone, Mail, Clock, X, AlertCircle } from 'lucide-react';
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +30,7 @@ export default function RootLayout({ children }) {
           {/* Logo Section */}
           <div className="flex items-center">
             <div className="w-20 h-12 sm:w-34 sm:h-16 rounded-lg flex items-center justify-center overflow-hidden">
-            <img
+            <Image
               src="/logo/MAZHIMUMBAI.jpg"
               alt="Mazhi Mumbai Logo"
               className="w-full h-full object-cover"
