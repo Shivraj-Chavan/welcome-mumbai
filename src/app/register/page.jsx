@@ -249,276 +249,284 @@
 
 "use client";
 
-import React, { useState } from "react";
-import InputFields from "../components/registerform/InputFields";
-import CheckBoxes from "../components/registerform/checkboxes";
-import Headers from "../components/registerform/Headers";
-import { useRouter } from "next/navigation";
+// import React, { useState } from "react";
+// import { useRouter } from "next/navigation";
+// import Headers from "../components/registerform/Headers";
+// import CheckBoxes from "../components/registerform/checkboxes";
+// import InputFields from "../components/registerform/InputFields";
 
-export default function RegistrationForm() {
-  const [companyType, setCompanyType] = useState([]);
-  const [showSuccess, setShowSuccess] = useState(false);
-const [loading, setLoading] = useState(false);
-const router = useRouter();
-  const [formData, setFormData] = useState({
-    personName: "",
-    companyName: "",
-    address: "",
-    pinCode: "",
-    location: "",
-    gst: "",
-    telephone: "",
-    fax: "",
-    mobile: "",
-    whatsapp: "",
-    email: "",
-    website: "",
-    nature: "",
-    category: "",
-    subCategory: "",
-    workingDays: "",
-    closedDays: "",
-  });
+// export default function RegistrationForm() {
+//   const [companyType, setCompanyType] = useState([]);
+//   const [showSuccess, setShowSuccess] = useState(false);
+//   const [loading, setLoading] = useState(false);
+//   const router = useRouter();
+//   const [formData, setFormData] = useState({
+//     personName: "",
+//     companyName: "",
+//     address: "",
+//     pinCode: "",
+//     location: "",
+//     gst: "",
+//     telephone: "",
+//     fax: "",
+//     mobile: "",
+//     whatsapp: "",
+//     email: "",
+//     website: "",
+//     nature: "",
+//     category: "",
+//     subCategory: "",
+//     workingDays: "",
+//     closedDays: "",
+//   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    const phoneFields = ["mobile", "whatsapp", "telephone"];
-    if (phoneFields.includes(name)) {
-      const onlyNumbers = value.replace(/\D/g, "");
-      if (onlyNumbers.length > 10) return;
-    }
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+//   const handleInputChange = (e) => {
+//     const { name, value } = e.target;
+//     const phoneFields = ["mobile", "whatsapp", "telephone"];
+//     if (phoneFields.includes(name)) {
+//       const onlyNumbers = value.replace(/\D/g, "");
+//       if (onlyNumbers.length > 10) return;
+//     }
+//     setFormData((prev) => ({ ...prev, [name]: value }));
+//   };
 
-  const handleCheckboxChange = (e) => {
-    const { value, checked } = e.target;
-    setCompanyType(
-      checked ? [...companyType, value] : companyType.filter((item) => item !== value)
-    );
-  };
+//   const handleCheckboxChange = (e) => {
+//     const { value, checked } = e.target;
+//     setCompanyType(
+//       checked ? [...companyType, value] : companyType.filter((item) => item !== value)
+//     );
+//   };
 
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-  setLoading(true);
+//   const handleSubmit = async (e) => {
+//   e.preventDefault();
+//   setLoading(true);
 
-  try {
-    const res = await fetch("/api/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formData, companyType }),
-    });
+//   try {
+//     const res = await fetch("/api/register", {
+//       method: "POST",
+//       headers: { "Content-Type": "application/json" },
+//       body: JSON.stringify({ ...formData, companyType }),
+//     });
 
-    console.log("register response", res);
+//     console.log("register response", res);
 
-    if (!res.ok) {
-      throw new Error("Failed to submit registration");
-    }
-    alert("Registration submitted successfully!");
+//     if (!res.ok) {
+//       throw new Error("Failed to submit registration");
+//     }
+//     alert("Registration submitted successfully!");
 
-    setShowSuccess(true);
-    // Reset form fields after success
-    setFormData({
-      personName: "",
-      companyName: "",
-      address: "",
-      pinCode: "",
-      location: "",
-      gst: "",
-      telephone: "",
-      fax: "",
-      mobile: "",
-      whatsapp: "",
-      email: "",
-      website: "",
-      nature: "",
-      category: "",
-      subCategory: "",
-      workingDays: "",
-      closedDays: "",
-    });
-    setCompanyType([]);
+//     setShowSuccess(true);
+//     // Reset form fields after success
+//     setFormData({
+//       personName: "",
+//       companyName: "",
+//       address: "",
+//       pinCode: "",
+//       location: "",
+//       gst: "",
+//       telephone: "",
+//       fax: "",
+//       mobile: "",
+//       whatsapp: "",
+//       email: "",
+//       website: "",
+//       nature: "",
+//       category: "",
+//       subCategory: "",
+//       workingDays: "",
+//       closedDays: "",
+//     });
+//     setCompanyType([]);
 
-    setTimeout(() => {
-      setShowSuccess(false);
-      router.push("/"); 
-    }, 3000);
-  } catch (error) {
-    console.error("Registration submission error:", error);
-    alert("Something went wrong. Please try again.");
-  } finally {
-    setLoading(false);
-  }
-};
+//     setTimeout(() => {
+//       setShowSuccess(false);
+//       router.push("/"); 
+//     }, 3000);
+//   } catch (error) {
+//     console.error("Registration submission error:", error);
+//     alert("Something went wrong. Please try again.");
+//   } finally {
+//     setLoading(false);
+//   }
+// };
 
+//   return (
+//     <form
+//       onSubmit={handleSubmit}
+//       className="max-w-4xl mx-auto p-6 shadow-xl rounded bg-white m-7"
+//     >
+//       <h1 className="text-center text-3xl font-semibold font-serif m-4">
+//         Registration Form
+//       </h1>
+
+//       {/* Type of Company */}
+//       <Headers title="Details" />
+//       <CheckBoxes
+//         label="Type of Company"
+//         options={[
+//           "Proprietorship",
+//           "Partnership",
+//           "LLP",
+//           "Public LTD",
+//           "HUF",
+//           "Other",
+//         ]}
+//         selected={companyType}
+//         onChange={handleCheckboxChange}
+//       />
+
+//       {/* Person & Company Name */}
+//       <div className="grid grid-cols-2 gap-4 my-4">
+//         <InputFields
+//           label="Person Name"
+//           name="personName"
+//           value={formData.personName}
+//           onChange={handleInputChange}
+//           required
+//         />
+//         <InputFields
+//           label="Company Name"
+//           name="companyName"
+//           value={formData.companyName}
+//           onChange={handleInputChange}
+//           required
+//         />
+//       </div>
+
+//       <InputFields
+//         label="Address"
+//         name="address"
+//         value={formData.address}
+//         onChange={handleInputChange}
+//         required
+//       />
+
+//       <div className="grid grid-cols-3 gap-4 my-4">
+//         <InputFields
+//           label="Pin Code"
+//           name="pinCode"
+//           type="number"
+//           value={formData.pinCode}
+//           onChange={handleInputChange}
+//         />
+//         <InputFields
+//           label="Location"
+//           name="location"
+//           value={formData.location}
+//           onChange={handleInputChange}
+//         />
+//         <InputFields
+//           label="GST No."
+//           name="gst"
+//           value={formData.gst}
+//           onChange={handleInputChange}
+//         />
+//       </div>
+
+//       {/* Contact Information */}
+//       <div className="grid grid-cols-3 gap-4 my-4">
+//         <InputFields
+//           label="Telephone No."
+//           name="telephone"
+//           value={formData.telephone}
+//           onChange={handleInputChange}
+//         />
+//         <InputFields
+//           label="FAX No."
+//           name="fax"
+//           value={formData.fax}
+//           onChange={handleInputChange}
+//         />
+//         <InputFields
+//           label="Mobile No."
+//           name="mobile"
+//           value={formData.mobile}
+//           onChange={handleInputChange}
+//         />
+//       </div>
+
+//       <div className="grid grid-cols-3 gap-4 my-4">
+//         <InputFields
+//           label="WhatsApp No."
+//           name="whatsapp"
+//           value={formData.whatsapp}
+//           onChange={handleInputChange}
+//         />
+//         <InputFields
+//           label="Email"
+//           name="email"
+//           type="email"
+//           value={formData.email}
+//           onChange={handleInputChange}
+//         />
+//         <InputFields
+//           label="Website"
+//           name="website"
+//           value={formData.website}
+//           onChange={handleInputChange}
+//         />
+//       </div>
+
+//       {/* Nature of Business */}
+//       <Headers title="Nature of Bussiness" />
+//       <InputFields
+//         label="Nature of Business"
+//         name="nature"
+//         value={formData.nature}
+//         onChange={handleInputChange}
+//         required
+//       />
+
+//       <div className="grid grid-cols-2 gap-4 my-4">
+//         <InputFields
+//           label="Category"
+//           name="category"
+//           value={formData.category}
+//           onChange={handleInputChange}
+//           required
+//         />
+//         <InputFields
+//           label="Sub Category"
+//           name="subCategory"
+//           value={formData.subCategory}
+//           onChange={handleInputChange}
+//           required
+//         />
+//       </div>
+
+//       {/* Working Days */}
+//       <div className="grid grid-cols-2 gap-4 my-4">
+//         <InputFields
+//           label="Working Days"
+//           name="workingDays"
+//           value={formData.workingDays}
+//           onChange={handleInputChange}
+//         />
+//         <InputFields
+//           label="Closed Days"
+//           name="closedDays"
+//           value={formData.closedDays}
+//           onChange={handleInputChange}
+//         />
+//       </div>
+
+//       {/* Submit */}
+//       <div className="flex justify-center items-center">
+//         <button
+//           type="submit"
+//           className="mt-6 text-center border-2 border-green-500 bg-white text-lg font-semibold text-black hover:bg-green-500 hover:text-white px-6 py-2 items-center rounded-full transition hover:scale-y-105"
+//         >
+//           Submit
+//         </button>
+//       </div>
+//     </form>
+//   );
+// }
+
+import React from 'react'
+
+export default function Register() {
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="max-w-4xl mx-auto p-6 shadow-xl rounded bg-white m-7"
-    >
-      <h1 className="text-center text-3xl font-semibold font-serif m-4">
-        Registration Form
-      </h1>
-
-      {/* Type of Company */}
-      <Headers title="Details" />
-      <CheckBoxes
-        label="Type of Company"
-        options={[
-          "Proprietorship",
-          "Partnership",
-          "LLP",
-          "Public LTD",
-          "HUF",
-          "Other",
-        ]}
-        selected={companyType}
-        onChange={handleCheckboxChange}
-      />
-
-      {/* Person & Company Name */}
-      <div className="grid grid-cols-2 gap-4 my-4">
-        <InputFields
-          label="Person Name"
-          name="personName"
-          value={formData.personName}
-          onChange={handleInputChange}
-          required
-        />
-        <InputFields
-          label="Company Name"
-          name="companyName"
-          value={formData.companyName}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-
-      <InputFields
-        label="Address"
-        name="address"
-        value={formData.address}
-        onChange={handleInputChange}
-        required
-      />
-
-      <div className="grid grid-cols-3 gap-4 my-4">
-        <InputFields
-          label="Pin Code"
-          name="pinCode"
-          type="number"
-          value={formData.pinCode}
-          onChange={handleInputChange}
-        />
-        <InputFields
-          label="Location"
-          name="location"
-          value={formData.location}
-          onChange={handleInputChange}
-        />
-        <InputFields
-          label="GST No."
-          name="gst"
-          value={formData.gst}
-          onChange={handleInputChange}
-        />
-      </div>
-
-      {/* Contact Information */}
-      <div className="grid grid-cols-3 gap-4 my-4">
-        <InputFields
-          label="Telephone No."
-          name="telephone"
-          value={formData.telephone}
-          onChange={handleInputChange}
-        />
-        <InputFields
-          label="FAX No."
-          name="fax"
-          value={formData.fax}
-          onChange={handleInputChange}
-        />
-        <InputFields
-          label="Mobile No."
-          name="mobile"
-          value={formData.mobile}
-          onChange={handleInputChange}
-        />
-      </div>
-
-      <div className="grid grid-cols-3 gap-4 my-4">
-        <InputFields
-          label="WhatsApp No."
-          name="whatsapp"
-          value={formData.whatsapp}
-          onChange={handleInputChange}
-        />
-        <InputFields
-          label="Email"
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={handleInputChange}
-        />
-        <InputFields
-          label="Website"
-          name="website"
-          value={formData.website}
-          onChange={handleInputChange}
-        />
-      </div>
-
-      {/* Nature of Business */}
-      <Headers title="Nature of Bussiness" />
-      <InputFields
-        label="Nature of Business"
-        name="nature"
-        value={formData.nature}
-        onChange={handleInputChange}
-        required
-      />
-
-      <div className="grid grid-cols-2 gap-4 my-4">
-        <InputFields
-          label="Category"
-          name="category"
-          value={formData.category}
-          onChange={handleInputChange}
-          required
-        />
-        <InputFields
-          label="Sub Category"
-          name="subCategory"
-          value={formData.subCategory}
-          onChange={handleInputChange}
-          required
-        />
-      </div>
-
-      {/* Working Days */}
-      <div className="grid grid-cols-2 gap-4 my-4">
-        <InputFields
-          label="Working Days"
-          name="workingDays"
-          value={formData.workingDays}
-          onChange={handleInputChange}
-        />
-        <InputFields
-          label="Closed Days"
-          name="closedDays"
-          value={formData.closedDays}
-          onChange={handleInputChange}
-        />
-      </div>
-
-      {/* Submit */}
-      <div className="flex justify-center items-center">
-        <button
-          type="submit"
-          className="mt-6 text-center border-2 border-green-500 bg-white text-lg font-semibold text-black hover:bg-green-500 hover:text-white px-6 py-2 items-center rounded-full transition hover:scale-y-105"
-        >
-          Submit
-        </button>
-      </div>
-    </form>
-  );
+    <div>Register page</div>
+  )
 }

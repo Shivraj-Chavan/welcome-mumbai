@@ -33,6 +33,8 @@ export default function RootLayout({ children }) {
             <Image
               src="/logo/MAZHIMUMBAI.jpg"
               alt="Mazhi Mumbai Logo"
+              width={128}   
+              height={64}   
               className="w-full h-full object-cover"
             />
           </div>
