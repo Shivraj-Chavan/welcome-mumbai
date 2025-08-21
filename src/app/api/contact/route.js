@@ -20,7 +20,7 @@ export async function POST(request) {
         // Email content
         let mailOptions = {
             from: 'mazhimumbaiinfo@gmail.com',
-            to: 'shivrajchavan1902@gmail.com',
+            to: 'mazhimumbaidata@gmail.com',
             subject: 'New Contact Form Submission',
             text: ` Name: ${name}
             Email: ${email}

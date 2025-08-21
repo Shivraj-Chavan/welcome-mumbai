@@ -47,6 +47,8 @@ export default function InquiryPage() {
         enquiry: "",
       });
 
+      alert("Thank you! Your inquiry has been submitted successfully.");
+
       setTimeout(() => {
         setShowSuccess(false)
               router.push("/");
@@ -150,8 +152,8 @@ export default function InquiryPage() {
                 Inquiry Message
               </label>
               <textarea
-                id="message"
-                name="message"
+                id="enquiry"
+                name="enquiry"
                 value={inquiryForm.enquiry}
                 onChange={handleInputChange}
                 rows={5}
