@@ -19,8 +19,8 @@ export async function POST(request) {
     });
 
     let content = `
-- Company Name: ${body.fullName}
-- Mobile: ${body.phone}
+- Company Name: ${body.companyName}
+- Mobile: ${body.mobile}
 - Email: ${body.email}
 - Person Name :${body.personName}
 - Address: ${body.address}
@@ -29,7 +29,6 @@ export async function POST(request) {
    - Gst: ${body.gst}
    - Telephone: ${body.telephone}
    - Fax: ${body.fax}
-   - Mobile: ${body.mobile}
    - Whatsapp: ${body.whatsapp}
    - Email: ${body.email}
    - Website: ${body.website}

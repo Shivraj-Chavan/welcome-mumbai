@@ -96,10 +96,10 @@ export default function RootLayout({ children }) {
                     />
                   </div>
               
-                {/* <div>
+                <div>
                   <h3 className="text-xl font-bold">Mazhi Mumbai</h3>
                   <p className="text-gray-400 italic">Tapri Se Taj Tak</p>
-                </div> */}
+                </div>
               </div>
               <p className="text-gray-400 mb-4">
                 Your trusted local guide connecting you to authentic Mumbai experiences, 
