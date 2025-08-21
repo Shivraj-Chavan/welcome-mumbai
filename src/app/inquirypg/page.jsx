@@ -65,7 +65,7 @@ export default function InquiryPage() {
     <div className="min-h-screen bg-white py-5">
  
       {/* Main Content */}
-      <div className="max-w-2xl mx-auto px-4 py-12 border rounded-xl m-6">
+      <div className="max-w-2xl mx-auto px-4 py-12 shadow-xl rounded-xl m-6">
         <div className="bg-white p-2">
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Get in Touch</h2>
           <p className="text-gray-600 mb-8">

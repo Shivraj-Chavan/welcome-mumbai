@@ -22,11 +22,29 @@ export async function POST(request) {
 - Company Name: ${body.fullName}
 - Mobile: ${body.phone}
 - Email: ${body.email}
+- Person Name :${body.personName}
+- Address: ${body.address}
+  - PinCode: ${body.pinCode}
+   - Location: ${body.location}
+   - Gst: ${body.gst}
+   - Telephone: ${body.telephone}
+   - Fax: ${body.fax}
+   - Mobile: ${body.mobile}
+   - Whatsapp: ${body.whatsapp}
+   - Email: ${body.email}
+   - Website: ${body.website}
+   - Nature: ${body.nature}
+   - Category: ${body.category}
+   - SubCategory: ${body.subCategory}
+   - WorkingDays: ${body.workingDays}
+   - ClosedDays: ${body.closedDays}
  `;
+ console.log(content);
+ 
 
     const mailOptions = {
       from: 'mazhimumbaiinfo@gmail.com',
-      to: 'shivrajchavan1902@gmail.com',
+      to: 'amalik2820@gmail.com',
       subject: 'New Registration For Mumbai',
       text: content,
     };

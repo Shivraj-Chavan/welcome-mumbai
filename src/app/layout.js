@@ -28,9 +28,14 @@ export default function RootLayout({ children }) {
         <div className="flex items-center justify-between">
           {/* Logo Section */}
           <div className="flex items-center">
-            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 to-yellow-500 rounded-lg flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg">
-              MM
-            </div>
+            <div className="w-20 h-12 sm:w-34 sm:h-16 rounded-lg flex items-center justify-center overflow-hidden">
+            <img
+              src="/logo/MAZHIMUMBAI.jpg"
+              alt="Mazhi Mumbai Logo"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
           </div>
           
           {/* Contact Info Section */}
@@ -80,7 +85,7 @@ export default function RootLayout({ children }) {
                   MM
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold">Majhi Mumbai</h3>
+                  <h3 className="text-xl font-bold">Mazhi Mumbai</h3>
                   <p className="text-gray-400 italic">Tapri Se Taj Tak</p>
                 </div>
               </div>
