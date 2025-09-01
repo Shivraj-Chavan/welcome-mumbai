@@ -33,7 +33,8 @@ export default function MajhiMumbaiLanding() {
 
 
       {/* Hero Section */}
-      <section className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-orange-600 overflow-hidden">
+      <section 
+      className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-orange-600 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
         
         {/* Animated background elements */}
@@ -136,6 +137,11 @@ export default function MajhiMumbaiLanding() {
       {/* CTA Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <Image src='/banner/image (1).png'
+          className='w-full'
+          width={1024}
+          height={100}
+          />
           <div className="bg-gradient-to-br from-blue-50 to-orange-50 rounded-2xl p-12 shadow-xl">
             <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
               Start Your <span className="bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">Mumbai Journey</span>
@@ -147,6 +153,11 @@ export default function MajhiMumbaiLanding() {
               "From humble tapris to grand palaces — we know Mumbai like no one else"
             </div>
           </div>
+          <Image src='/banner/image (4).png'
+          className='w-full'
+          width={1024}
+          height={100}
+          />
         </div>
       </section>
 
