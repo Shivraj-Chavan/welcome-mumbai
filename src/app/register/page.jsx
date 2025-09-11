@@ -251,14 +251,11 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-// import Headers from "../components/registerform/Headers";
-// import CheckBoxes from "../components/registerform/checkboxes";
-// import InputFields from "../components/registerform/InputFields";
 
 // CheckBoxes
   const CheckBoxes = ({ label, options, selected, onChange, required }) => (
     <div className="mb-4">
-      <label htmlFor={name} className="text-gray-700 font-medium font-serif">
+      <label  className="text-gray-700 font-medium font-serif">
         {label}{" "}
         {required && (
           <span className="text-red-500" aria-hidden="true">
