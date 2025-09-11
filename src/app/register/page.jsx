@@ -256,9 +256,17 @@ import { useRouter } from "next/navigation";
 // import InputFields from "../components/registerform/InputFields";
 
 // CheckBoxes
-  const CheckBoxes = ({ label, options, selected, onChange }) => (
+  const CheckBoxes = ({ label, options, selected, onChange, required }) => (
     <div className="mb-4">
-      <label className="block font-medium mb-1">{label}</label>
+      <label htmlFor={name} className="text-gray-700 font-medium font-serif">
+        {label}{" "}
+        {required && (
+          <span className="text-red-500" aria-hidden="true">
+            *
+          </span>
+        )}
+      </label>
+
       <div className="flex flex-wrap gap-4">
         {options.map((option) => (
           <label key={option} className="flex items-center gap-2">
@@ -293,7 +301,15 @@ import { useRouter } from "next/navigation";
     const ringColorClass = colorClasses[color] || "";
     return (
       <div className="flex flex-col mb-4">
-        <label className="font-medium mb-1 font-serif">{label}</label>
+       <label htmlFor={name} className="text-gray-700 font-medium font-serif">
+        {label}{" "}
+        {required && (
+          <span className="text-red-500" aria-hidden="true">
+            *
+          </span>
+        )}
+      </label>
+
         <input
           type={type}
           name={name}
@@ -312,7 +328,6 @@ import { useRouter } from "next/navigation";
       {title}
     </h2>
   );
-
 
 export default function RegistrationForm() {
   const [companyType, setCompanyType] = useState([]);
@@ -367,7 +382,6 @@ export default function RegistrationForm() {
   // Default case: allow normal text
   setFormData((prev) => ({ ...prev, [name]: value }));
 };
-
 
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
@@ -432,7 +446,7 @@ export default function RegistrationForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-4xl mx-auto p-6 shadow-xl rounded bg-white m-7"
+      className="max-w-4xl mx-auto p-6 shadow-xl rounded bg-orange-50 m-7"
     >
       <h1 className="text-center text-3xl font-semibold font-serif m-4">
         Registration Form
@@ -456,19 +470,20 @@ export default function RegistrationForm() {
 
       {/* Person & Company Name */}
       <div className="grid grid-cols-2 gap-4 my-4">
-        <InputFields
-          label="Person Name"
-          name="personName"
-          value={formData.personName}
-          onChange={handleInputChange}
-          required
-        />
+       
         <InputFields
           label="Company Name"
           name="companyName"
           value={formData.companyName}
           onChange={handleInputChange}
           required
+        />
+
+         <InputFields
+          label="Person Name "
+          name="personName"
+          value={formData.personName}
+          onChange={handleInputChange}
         />
       </div>
 
@@ -477,7 +492,6 @@ export default function RegistrationForm() {
         name="address"
         value={formData.address}
         onChange={handleInputChange}
-        required
       />
 
       <div className="grid grid-cols-3 gap-4 my-4">
@@ -522,6 +536,7 @@ export default function RegistrationForm() {
            type="text"
           value={formData.mobile}
           onChange={handleInputChange}
+          required
         />
       </div>
 
@@ -554,7 +569,6 @@ export default function RegistrationForm() {
         name="nature"
         value={formData.nature}
         onChange={handleInputChange}
-        required
       />
 
       <div className="grid grid-cols-2 gap-4 my-4">
@@ -563,14 +577,12 @@ export default function RegistrationForm() {
           name="category"
           value={formData.category}
           onChange={handleInputChange}
-          required
         />
         <InputFields
           label="Sub Category"
           name="subCategory"
           value={formData.subCategory}
           onChange={handleInputChange}
-          required
         />
       </div>
 

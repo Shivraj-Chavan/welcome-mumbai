@@ -33,12 +33,12 @@ export default function MajhiMumbaiLanding() {
 
 
       {/* Hero Section */}
-      <section 
+      {/* <section 
       className="relative min-h-screen bg-gradient-to-br from-blue-900 via-blue-800 to-orange-600 overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
-        
+         */}
         {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
+        {/* <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white/5 rounded-full blur-2xl animate-pulse"></div>
@@ -88,7 +88,7 @@ export default function MajhiMumbaiLanding() {
                   </button>
                   </Link>
                 </div>
-              </div>
+              </div> */}
 
               {/* <div className="flex items-center space-x-8 pt-4">
                 <div className="flex items-center space-x-2">
@@ -100,7 +100,7 @@ export default function MajhiMumbaiLanding() {
                   <span className="text-blue-100">4.8 Rating</span>
                 </div>
               </div> */}
-            </div>
+            {/* </div>
 
             <div className="relative">
               <div className="relative w-full h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
@@ -116,9 +116,9 @@ export default function MajhiMumbaiLanding() {
                   <p className="text-blue-200">{heroImages[currentSlide].subtitle}</p>
                 </div>
               </div>
-              
+               */}
               {/* Slide indicators */}
-              <div className="flex justify-center space-x-2 mt-4">
+              {/* <div className="flex justify-center space-x-2 mt-4">
                 {heroImages.map((_, index) => (
                   <button
                     key={index}
@@ -132,33 +132,62 @@ export default function MajhiMumbaiLanding() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <Image src='/banner/image (1).png'
-          className='w-full'
+       <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+        {/* Desktop Image */}
+        <Image
+          src="/banner/image (1).png"
+          alt="Banner Desktop"
+          className="hidden sm:block w-full"
           width={1024}
           height={100}
-          />
-          <div className="bg-gradient-to-br from-blue-50 to-orange-50 rounded-2xl p-12 shadow-xl">
-            <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-              Start Your <span className="bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">Mumbai Journey</span>
-            </div>
-            <p className="text-xl text-gray-600 mb-8">
-              Experience authentic Mumbai with our trusted local network
-            </p>
-            <div className="text-sm text-gray-500 italic">
-              "From humble tapris to grand palaces — we know Mumbai like no one else"
-            </div>
+        />
+
+        {/* Mobile Image */}
+        <Image
+          src="/banner/image (2).png"
+          alt="Banner Mobile"
+          className="block sm:hidden w-full"
+          width={400}  
+          height={100}
+        />
+
+        <div className="bg-gradient-to-br from-blue-50 to-orange-50 rounded-2xl p-12 shadow-xl">
+          <div className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            Start Your{' '}
+            <span className="bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
+              Mumbai Journey
+            </span>
           </div>
-          <Image src='/banner/image (4).png'
-          className='w-full'
+          <p className="text-xl text-gray-600 mb-8">
+            Experience authentic Mumbai with our trusted local network
+          </p>
+          <div className="text-sm text-gray-500 italic">
+            "From humble tapris to grand palaces — we know Mumbai like no one else"
+          </div>
+        </div>
+
+        {/* Desktop Image */}
+        <Image
+          src="/banner/image (4).png"
+          alt="Banner Desktop 2"
+          className="hidden sm:block w-full"
           width={1024}
           height={100}
-          />
-        </div>
+        />
+
+        {/* Mobile Image */}
+        <Image
+          src="/banner/image (3).png"
+          alt="Banner Mobile 2"
+          className="block sm:hidden w-full"
+          width={400}
+          height={100}
+        />
+      </div>
       </section>
 
  

@@ -67,8 +67,8 @@ export default function InquiryPage() {
     <div className="min-h-screen bg-white py-5">
  
       {/* Main Content */}
-      <div className="max-w-2xl mx-auto px-4 py-12 shadow-xl rounded-xl m-6">
-        <div className="bg-white p-2">
+      <div className="max-w-2xl mx-auto px-4 py-12 shadow-xl rounded-xl m-6 bg-orange-50">
+        <div className="bg-orange-50 p-2">
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Get in Touch</h2>
           <p className="text-gray-600 mb-8">
             Have questions about our services? We'd love to hear from you.
@@ -91,7 +91,7 @@ export default function InquiryPage() {
                 htmlFor="fullName"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
-                Full Name
+                Full Name <span className='text-red-600'>*</span>
               </label>
               <input
                 type="text"
@@ -129,7 +129,7 @@ export default function InquiryPage() {
                 htmlFor="phone"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
-                Phone Number
+                Phone Number <span className='text-red-600'>*</span>
               </label>
               <input
                 type="tel"

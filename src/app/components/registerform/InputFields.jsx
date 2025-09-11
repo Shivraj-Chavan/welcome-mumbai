@@ -11,7 +11,14 @@ export default function InputFields({label, name, value, onChange, type = "text"
 
   return (
     <div className="flex flex-col mb-4">
-      <label className="font-medium mb-1 font-serif">{label}</label>
+       <label htmlFor={name} className="text-gray-700 font-medium font-serif">
+        {label}{" "}
+        {required && (
+          <span className="text-red-500 !important" aria-hidden="true">
+            *
+          </span>
+        )}
+      </label>
       <input
         type={type}
         name={name}
