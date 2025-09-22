@@ -92,8 +92,8 @@ export default function HeroSection() {
        <div className="absolute bottom-3 left-3 bg-white px-3 py-2 rounded shadow text-xs font-medium flex items-start gap-2 leading-tight">
         <PiCloudSunBold className="text-orange-400 text-lg mt-[2px]" />
         <div className="flex flex-col leading-tight">
-          <span className="text-gray-800">Marine Drive</span>
-          <span className="text-gray-400 text-[10px]">Queen's Necklace</span>
+          <span className="text-gray-800">Gateway of India</span>
+          <span className="text-gray-400 text-[10px]">Historic Mumbai</span>
         </div>
       </div>
 
