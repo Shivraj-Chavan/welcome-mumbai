@@ -42,7 +42,7 @@ export default function HeroSection() {
         <div className="flex items-center sm:items-start gap-0 sm:gap-2 min-w-[150px]">
           <PiUsersThreeLight className="text-blue-500 text-xl mt-[2px]" />
           <div>
-            <div className="font-bold text-gray-900 text-lg">1000+</div>
+            <div className="font-bold text-gray-900 text-lg">5000+</div>
             <div className="text-gray-500 text-sm">Happy Customers</div>
           </div>
         </div>
