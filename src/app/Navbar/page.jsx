@@ -55,7 +55,7 @@ export default function Navbar() {
           {/* Email */}
           <div className="flex items-center gap-2">
             <FiMail className="text-orange-500 text-base" />
-            <span className=" max-w-[180px]">mazhimumbainfo@gmail.com</span>
+            <span className=" max-w-[180px]">info@mazhimumbai.com</span>
           </div>
 
           {/* Phone */}
@@ -90,7 +90,7 @@ export default function Navbar() {
           {/* Email */}
           <div className="flex items-center gap-2">
             <FiMail className="text-orange-500 text-base" />
-            <span className="truncate">mazhimumbainfo@gmail.com</span>
+            <span className="truncate">info@mazhimumbai.com</span>
           </div>
 
           {/* Phone */}
