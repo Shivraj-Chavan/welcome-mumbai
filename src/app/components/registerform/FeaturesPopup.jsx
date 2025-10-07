@@ -129,6 +129,12 @@ export default function PlansInfoPopup({ open, onClose }) {
               </div>
             ))}
           </div>
+             <div className="text-center my-2 text-gray-700 text-sm">
+          <p>
+            💥 <strong>Pre-launch offer:</strong> For Elite plan — Pay for 1 year,
+            get 2 years of service!
+          </p>
+        </div>
         </div>
       </div>
 
