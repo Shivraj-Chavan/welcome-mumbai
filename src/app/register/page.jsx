@@ -251,6 +251,8 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import PlanPopup from "@/app/components/registerform/PlanPopup"
+import FeaturesPopup from "@/app/components/registerform/FeaturesPopup"
 
 // CheckBoxes
   const CheckBoxes = ({ label, options, selected, onChange, required }) => (
@@ -330,7 +332,11 @@ export default function RegistrationForm() {
   const [companyType, setCompanyType] = useState([]);
   const [showSuccess, setShowSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
+   const [showPopup, setShowPopup] = useState(false);
   const router = useRouter();
+  const [showPlans, setShowPlans] = useState(false);
+const [selectedPlan, setSelectedPlan] = useState(null);
+
   const [formData, setFormData] = useState({
     personName: "",
     companyName: "",
@@ -406,6 +412,9 @@ export default function RegistrationForm() {
     alert("Registration submitted successfully!");
 
     setShowSuccess(true);
+    setShowPlans(true); // open the plans popup
+
+     setShowPopup(true);
     // Reset form fields after success
     setFormData({
       personName: "",
@@ -430,7 +439,7 @@ export default function RegistrationForm() {
 
     setTimeout(() => {
       setShowSuccess(false);
-      router.push("/"); 
+ 
     }, 3000);
   } catch (error) {
     console.error("Registration submission error:", error);
@@ -440,10 +449,24 @@ export default function RegistrationForm() {
   }
 };
 
+// WhatsApp notification
+const sendWhatsAppMessage = (plan, messageType) => {
+  const phoneNumber = "919619363738";
+  let message = "";
+  if (messageType === "success") {
+    message = `✅ Payment successful for ${plan.name} plan (₹${plan.price}). Welcome aboard!`;
+  } else if (messageType === "pending") {
+    message = `⚠️ You selected ${plan.name} plan (₹${plan.price}). Complete payment to unlock advanced features.`;
+  }
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+};
   return (
+    <>
+    
     <form
       onSubmit={handleSubmit}
-      className="max-w-4xl mx-auto p-6 shadow-xl rounded bg-orange-50 m-7"
+      className="max-w-4xl mx-auto p-6 shadow-xl rounded bg-orange-50 m-7 mt-25"
     >
       <h1 className="text-center text-3xl font-semibold font-serif m-4">
         Registration Form
@@ -608,7 +631,20 @@ export default function RegistrationForm() {
           Submit
         </button>
       </div>
+
+    
+      
     </form>
+
+         
+        <FeaturesPopup
+      open={showPopup}
+      onClose={() => setShowPopup(false)}
+      onSelectPlan={(plan) => sendWhatsAppMessage(plan)}
+    />
+
+    </>
+
   );
 }
 
