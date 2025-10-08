@@ -404,13 +404,11 @@ const [selectedPlan, setSelectedPlan] = useState(null);
       body: JSON.stringify({ ...formData, companyType }),
     });
 
-    console.log("register response", res);
-
     if (!res.ok) {
       throw new Error("Failed to submit registration");
     }
     setLoading(false)
-    alert("Registration submitted successfully!");
+    // alert("Registration submitted successfully!");
 
     setShowSuccess(true);
     setShowPlans(true); // open the plans popup
@@ -624,11 +622,11 @@ const sendWhatsAppMessage = (plan, messageType) => {
       </div>
 
       {/* Submit */}
-    <div className="flex justify-center items-center">
+    <div className="flex flex-col justify-center items-center text-center py-6">
   <button
     type="submit"
     disabled={loading}
-    className={`mt-6 text-center border-2 border-green-500 text-lg font-semibold px-6 py-2 items-center rounded-full transition hover:scale-y-105 
+    className={`mt-6 text-center border-2 border-green-500 text-lg font-semibold px-6 py-2 items-center rounded-2xl transition hover:scale-y-105 
       ${loading 
         ? "bg-green-500 text-white cursor-not-allowed opacity-80" 
         : "bg-white text-black hover:bg-green-500 hover:text-white"
@@ -659,7 +657,7 @@ const sendWhatsAppMessage = (plan, messageType) => {
         Loading...
       </div>
     ) : (
-      "Submit"
+      "Next"
     )}
   </button>
 </div>

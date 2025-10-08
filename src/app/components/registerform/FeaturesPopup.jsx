@@ -10,40 +10,40 @@ export default function PlansInfoPopup({ open, onClose }) {
   if (!open) return null;
 
   const plans = [
-  {
-    name: "Free",
-    price: 0,
-    features: [
-      "1x Visibility",
-      "2 Photos",
-      "No Videos",
-      "No Mm Verified Seal",
-      "Premium Customer Support",
-      "No Ad Discount",
-      "Smart Lead System",
-      "Map Locations",
-      "No Social Media Links",
-      "No Promotion on MM Channels"
-    ],
-    color: "border-gray-300",
-  },
-  {
-    name: "Starter",
-    price: 1000,
-    features: [
-      "1x Visibility",
-      "5 Photos",
-      "No Videos",
-      "Mm Verified Seal",
-      "Premium Customer Support",
-      "No Ad Discount",
-      "Smart Lead System",
-      "Map Locations",
-      "No Social Media Links",
-      "No Promotion on MM Channels"
-    ],
-    color: "border-blue-300",
-  },
+  // {
+  //   name: "Free",
+  //   price: 0,
+  //   features: [
+  //     "1x Visibility",
+  //     "2 Photos",
+  //     "No Videos",
+  //     "No Mm Verified Seal",
+  //     "Premium Customer Support",
+  //     "No Ad Discount",
+  //     "Smart Lead System",
+  //     "Map Locations",
+  //     "No Social Media Links",
+  //     "No Promotion on MM Channels"
+  //   ],
+  //   color: "border-gray-300",
+  // },
+  // {
+  //   name: "Starter",
+  //   price: 1000,
+  //   features: [
+  //     "1x Visibility",
+  //     "5 Photos",
+  //     "No Videos",
+  //     "Mm Verified Seal",
+  //     "Premium Customer Support",
+  //     "No Ad Discount",
+  //     "Smart Lead System",
+  //     "Map Locations",
+  //     "No Social Media Links",
+  //     "No Promotion on MM Channels"
+  //   ],
+  //   color: "border-blue-300",
+  // },
   {
     name: "Pro",
     price: 2000,
@@ -98,7 +98,7 @@ export default function PlansInfoPopup({ open, onClose }) {
           </div>
 
           {/* Plans Grid */}
-          <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {plans.map((plan) => (
               <div
                 key={plan.name}

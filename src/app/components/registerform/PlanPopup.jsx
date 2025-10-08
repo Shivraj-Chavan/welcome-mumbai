@@ -64,7 +64,7 @@ const handlePaymentCancel = () => {
           </p>
 
           <div className="space-y-3">
-            <button
+            {/* <button
               onClick={() => handleSelectPlan("free")}
               className="w-full py-2 px-4 rounded-lg font-semibold border border-orange-500 bg-orange-50 hover:bg-orange-100 transition"
             >
@@ -76,7 +76,7 @@ const handlePaymentCancel = () => {
               className="w-full py-2 px-4 rounded-lg font-semibold border border-blue-500 bg-blue-50 hover:bg-blue-100 transition"
             >
               💼 Starter Plan – ₹1000
-            </button>
+            </button> */}
 
             <button
               onClick={() => handleSelectPlan("pro")}
