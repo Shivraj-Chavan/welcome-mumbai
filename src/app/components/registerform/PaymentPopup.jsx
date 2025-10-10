@@ -19,7 +19,7 @@ const PAYMENT_CONFIG = {
 };
 
 const UPI_APPS = [
-    { name: "Any UPI App", scheme: "upi", color: "bg-gradient-to-r from-blue-600 to-blue-700", icon: MdAccountBalanceWallet },
+    // { name: "Any UPI App", scheme: "upi", color: "bg-gradient-to-r from-blue-600 to-blue-700", icon: MdAccountBalanceWallet },
     { name: "Google Pay", scheme: "gpay", color: "bg-gradient-to-r from-green-600 to-green-700", icon: FaGooglePay },
     { name: "PhonePe", scheme: "phonepe", color: "bg-gradient-to-r from-purple-600 to-purple-700", icon: SiPhonepe },
     { name: "Paytm", scheme: "paytmmp", color: "bg-gradient-to-r from-blue-500 to-cyan-600", icon: SiPaytm },
@@ -38,7 +38,7 @@ export default function PaymentPopup({ plan, onClose }) {
 
     const handlePaymentSuccess = () => {
         sendWhatsAppMessage(
-            `✅ Payment Completed Successfully!\n\n📦 Plan: *${plan.name}*\n💰 Amount: ₹${plan.price}\n\n🙏 Please confirm my registration and activate my account.\n\nThank you!`
+            `✅ Payment Completed Successfully!\n\n📦 Plan: *${plan.name}*\n💰 Amount: ₹${plan.price}\n\n Please confirm my registration .\n\nThank you!`
         );
         onClose();
     };
@@ -81,7 +81,7 @@ export default function PaymentPopup({ plan, onClose }) {
                             <span className="text-3xl font-bold">₹{plan.price}</span>
                             <span className="text-sm opacity-90">/ year</span>
                         </div>
-                        <p className="text-xs sm:text-sm opacity-90 mt-1">{plan.name} Plan</p>
+                        <p className="text-xs sm:text-sm opacity-90 mt-1">{plan.name} </p>
                     </div>
                 </div>
 
@@ -100,7 +100,7 @@ export default function PaymentPopup({ plan, onClose }) {
                                 <div className="bg-white rounded-lg p-3 sm:p-4 shadow-sm border border-gray-200">
                                     <img
                                         src={PAYMENT_CONFIG.planImages[plan.name]}
-                                        alt={`${plan.name} plan QR code`}
+                                        alt={`${plan.name} QR code`}
                                         className="w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-lg"
                                     />
                                 </div>

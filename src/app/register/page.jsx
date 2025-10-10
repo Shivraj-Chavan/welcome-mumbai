@@ -513,7 +513,7 @@ const sendWhatsAppMessage = (plan, messageType) => {
         onChange={handleInputChange}
       />
 
-      <div className="grid grid-cols-3 gap-4 my-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 my-4">
         <InputFields
           label="Pin Code"
           name="pinCode"
@@ -533,10 +533,6 @@ const sendWhatsAppMessage = (plan, messageType) => {
           value={formData.gst}
           onChange={handleInputChange}
         />
-      </div>
-
-      {/* Contact Information */}
-      <div className="grid grid-cols-3 gap-4 my-4">
         <InputFields
           label="Telephone No."
           name="telephone"
@@ -557,9 +553,7 @@ const sendWhatsAppMessage = (plan, messageType) => {
           onChange={handleInputChange}
           required
         />
-      </div>
-
-      <div className="grid grid-cols-3 gap-4 my-4">
+     
         <InputFields
           label="WhatsApp No."
           name="whatsapp"
@@ -622,11 +616,11 @@ const sendWhatsAppMessage = (plan, messageType) => {
       </div>
 
       {/* Submit */}
-    <div className="flex flex-col justify-center items-center text-center py-6">
+    <div className="flex flex-col justify-center items-center text-center py-3">
   <button
     type="submit"
     disabled={loading}
-    className={`mt-6 text-center border-2 border-green-500 text-lg font-semibold px-6 py-2 items-center rounded-2xl transition hover:scale-y-105 
+    className={`text-center border-2 border-green-500 text-lg font-semibold px-6 py-2 items-center rounded-2xl transition hover:scale-y-105 
       ${loading 
         ? "bg-green-500 text-white cursor-not-allowed opacity-80" 
         : "bg-white text-black hover:bg-green-500 hover:text-white"
