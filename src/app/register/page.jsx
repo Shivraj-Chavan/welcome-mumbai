@@ -398,15 +398,15 @@ const [selectedPlan, setSelectedPlan] = useState(null);
   setLoading(true);
 
   try {
-    // const res = await fetch("/api/register", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({ ...formData, companyType }),
-    // });
+    const res = await fetch("/api/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...formData, companyType }),
+    });
 
-    // if (!res.ok) {
-    //   throw new Error("Failed to submit registration");
-    // }
+    if (!res.ok) {
+      throw new Error("Failed to submit registration");
+    }
     setLoading(false)
     // alert("Registration submitted successfully!");
 
