@@ -21,8 +21,8 @@ const PAYMENT_CONFIG = {
 const UPI_APPS = [
     // { name: "Any UPI App", scheme: "upi", color: "bg-gradient-to-r from-blue-600 to-blue-700", icon: MdAccountBalanceWallet },
     { name: "Google Pay", scheme: "gpay", color: "bg-gradient-to-r from-green-600 to-green-700", icon: FaGooglePay },
-    { name: "PhonePe", scheme: "phonepe", color: "bg-gradient-to-r from-purple-600 to-purple-700", icon: SiPhonepe },
-    { name: "Paytm", scheme: "paytmmp", color: "bg-gradient-to-r from-blue-500 to-cyan-600", icon: SiPaytm },
+    // { name: "PhonePe", scheme: "phonepe", color: "bg-gradient-to-r from-purple-600 to-purple-700", icon: SiPhonepe },
+    // { name: "Paytm", scheme: "paytmmp", color: "bg-gradient-to-r from-blue-500 to-cyan-600", icon: SiPaytm },
 ];
 // ===================================================
 
@@ -103,10 +103,7 @@ console.log({plan})
                                         alt={`${plan.name} QR code`}
                                         className="w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-lg"
                                     />
-                                </div>
-
-                                <div className="mt-4 space-y-2">
-                                    {/* <div className="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-gray-200">
+                                        <div className="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-gray-200">
                                         <div>
                                             <p className="text-xs text-gray-500">UPI ID</p>
                                             <p className="text-sm font-semibold text-gray-800">{PAYMENT_CONFIG.upiId}</p>
@@ -122,7 +119,11 @@ console.log({plan})
                                                 <Copy size={18} className="text-gray-600" />
                                             )}
                                         </button>
-                                    </div> */}
+                                    </div>
+                                </div>
+
+                                <div className="mt-2 space-y-2">
+                                    
                                     <p className="text-xs text-center text-gray-500">
                                         💡 Scan with any UPI app or use quick pay buttons below
                                     </p>
@@ -131,9 +132,7 @@ console.log({plan})
 
                             {/* UPI Payment Buttons */}
                             <div className="space-y-2 mb-2">
-                                <p className="text-xs font-medium text-gray-600 text-center mb-2">
-                                    ⚡ Quick Pay Options
-                                </p>
+                            
                                 <div className="flex justify-center gap-2 ">
                                     {UPI_APPS.map((app) => {
                                         const Icon = app.icon;
@@ -148,6 +147,7 @@ console.log({plan})
                                             </button>
                                         );
                                     })}
+                                
                                 </div>
 
                             </div>
