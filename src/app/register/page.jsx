@@ -291,6 +291,8 @@ import FeaturesPopup from "@/app/components/registerform/FeaturesPopup"
     type = "text",
     required,
     color = "green",
+    pattern,
+    title
   }) => {
     const colorClasses = {
       green: "focus:ring-green-500 focus:border-green-500",
@@ -315,6 +317,9 @@ import FeaturesPopup from "@/app/components/registerform/FeaturesPopup"
           value={value}
           onChange={onChange}
           required={required}
+                  title={title}
+
+        pattern={pattern}
           className={`border border-gray-300 rounded-md p-2 outline-none transition duration-150 focus:ring-1 ${ringColorClass}`}
         />
       </div>
@@ -548,8 +553,10 @@ const sendWhatsAppMessage = (plan, messageType) => {
         <InputFields
           label="Mobile No."
           name="mobile"
-           type="text"
+          type="tel"
           value={formData.mobile}
+            pattern="\d{10}"
+  title="Please enter a valid 10-digit mobile number"
           onChange={handleInputChange}
           required
         />
