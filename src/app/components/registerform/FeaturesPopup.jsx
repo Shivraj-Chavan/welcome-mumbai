@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { X } from "lucide-react";
 import PaymentPopup from "./PaymentPopup";
 
-export default function PlansInfoPopup({ open, onClose }) {
+export default function FeaturesPopup({ open, onClose }) {
   const [selectedPlan, setSelectedPlan] = useState(null);
 
   if (!open) return null;
@@ -46,6 +46,7 @@ export default function PlansInfoPopup({ open, onClose }) {
   // },
   {
     name: "Pro Plan",
+    url:"Pro",
     price: 2000,
     features: [
       "3x Visibility",
@@ -61,6 +62,7 @@ export default function PlansInfoPopup({ open, onClose }) {
   },
   {
     name: "Elite Plan",
+    url:"Elite",
     price: 5000,
     features: [
       "Top Visibility (T&C Apply)",

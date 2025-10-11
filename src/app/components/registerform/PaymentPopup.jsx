@@ -28,9 +28,9 @@ const UPI_APPS = [
 
 export default function PaymentPopup({ plan, onClose }) {
     const [copied, setCopied] = React.useState(false);
-
+    
     if (!plan) return null;
-
+console.log({plan})
     const sendWhatsAppMessage = (message) => {
         const encodedMsg = encodeURIComponent(message);
         window.open(`https://wa.me/${PAYMENT_CONFIG.whatsappNumber}?text=${encodedMsg}`, "_blank");
@@ -99,7 +99,7 @@ export default function PaymentPopup({ plan, onClose }) {
 
                                 <div className="bg-white rounded-lg p-3 sm:p-4 shadow-sm border border-gray-200">
                                     <img
-                                        src={PAYMENT_CONFIG.planImages[plan.name]}
+                                        src={PAYMENT_CONFIG.planImages[plan.url]}
                                         alt={`${plan.name} QR code`}
                                         className="w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-lg"
                                     />
